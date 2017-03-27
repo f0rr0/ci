@@ -13,6 +13,6 @@ master:
 nginx:
   build: jenkins-nginx
   ports:
-    - "8081:80" # Need to make this configurable, as we'll want 80:80 in 'prod' environments
+    - "${HTTP_PORT}:80"
   links:
     - master:jenkins-master
